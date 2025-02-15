@@ -17,7 +17,7 @@ endif;
 
             // Add custom Visitor role for non-logged-in users
             $roles['visitor'] = array(
-                'name' => __( 'Visitor', 'interactive-tour-builder' ),
+                'name' => esc_html__( 'Visitor', 'interactive-tour-builder' ),
             );
 
             // Loop through roles and generate options

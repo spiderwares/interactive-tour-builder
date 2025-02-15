@@ -82,9 +82,7 @@ if ( ! class_exists( 'INTB' ) ) :
          */
         public function includes() {
             require_once INTB_PATH . 'include/intb-functions.php';
-            require_once INTB_PATH . 'include/public/class-intb-shortcode.php';
-            require_once INTB_PATH . 'include/public/class-intb-generate-script.php';
-            require_once INTB_PATH . 'include/public/class-intb-enqueue-script.php';
+            require_once INTB_PATH . 'include/public/class-intb-script.php';
 
             if ( is_admin() ) {
                 $this->includes_admin();
@@ -98,7 +96,6 @@ if ( ! class_exists( 'INTB' ) ) :
          */
         private function includes_admin() {
             require_once INTB_PATH . 'include/admin/class-intb-manage.php';
-            require_once INTB_PATH . 'include/admin/class-intb-shortcode-column.php';
             require_once INTB_PATH . 'include/admin/class-intb-metadata.php';
             require_once INTB_PATH . 'include/admin/class-intb-page.php';
         }

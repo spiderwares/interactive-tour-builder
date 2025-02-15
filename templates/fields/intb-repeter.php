@@ -52,7 +52,7 @@ endif;
             <p>
                 <label for="intb_tour_description_<?php echo esc_attr( $index ); ?>"><?php esc_html_e( 'Description', 'interactive-tour-builder' ); ?></label>
                 <textarea name="intb_tour_meta_fields[<?php echo esc_attr( $index ); ?>][description]" id="intb_tour_description_<?php echo esc_attr( $index ); ?>" rows="4" class="widefat"><?php echo esc_textarea( $description ); ?></textarea>
-                <small><?php echo esc_html( __( 'Enter a description. You can use dynamic variables like {{post_name}}, {{username}}, {{user_email}}, {{display_name}}, {{admin_email}}.', 'interactive-tour-builder' ) ); ?></small>
+                <small><?php echo esc_html__( 'Enter a description. You can use dynamic variables like {{post_name}}, {{username}}, {{user_email}}, {{display_name}}, {{admin_email}}.', 'interactive-tour-builder' ); ?></small>
             </p>
 
 

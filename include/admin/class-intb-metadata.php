@@ -54,85 +54,85 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
         public function intb_option_meta_fields() {
             $this->fields = array(
                 'intb_style' => array(
-                    'name'       => __( 'Select Style', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Select Style', 'interactive-tour-builder' ),
                     'field_type' => 'intbselect',
                     'default'    => 'style1',
                     'options'    => array(
-                        'style1'    => __( 'Style 1', 'interactive-tour-builder' ),
-                        'style2'    => __( 'Style 2', 'interactive-tour-builder' ),
-                        'style3'    => __( 'Style 3', 'interactive-tour-builder' ),
-                        'style4'    => __( 'Style 4', 'interactive-tour-builder' ),
-                        'style5'    => __( 'Style 5', 'interactive-tour-builder' ),
+                        'style1'    => esc_html__( 'Style 1', 'interactive-tour-builder' ),
+                        'style2'    => esc_html__( 'Style 2', 'interactive-tour-builder' ),
+                        'style3'    => esc_html__( 'Style 3', 'interactive-tour-builder' ),
+                        'style4'    => esc_html__( 'Style 4', 'interactive-tour-builder' ),
+                        'style5'    => esc_html__( 'Style 5', 'interactive-tour-builder' ),
                     ),
-                    'desc'       => __( 'Choose a style for the tour.', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'Choose a style for the tour.', 'interactive-tour-builder' ),
                     'disabled_options' => array('style2', 'style3', 'style4', 'style5'),
                 ),
                 'intb_other_style' => array(
-                    'name'       => __( 'More Style', 'interactive-tour-builder' ),
+                    'name'       => '',
                     'field_type' => 'intbbutton',
                     'default'    => '',
                     'pro_link'   => '#',
-                    'button_text'=> __( 'Buy Pro', 'interactive-tour-builder' ),
-                    'desc'       => __( 'To enable more styles, you need to purchase the Pro version.', 'interactive-tour-builder' ),
+                    'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'To enable more styles, you need to purchase the Pro version.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
                 ),
                 'intb_animate' => array(
-                    'name'       => __( 'Enable Animation', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Animation', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'no'
                 ),
                 'intb_smooth_scroll' => array(
-                    'name'       => __( 'Enable Smooth Scroll', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Smooth Scroll', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes'
                 ),
                 'intb_allow_keyboard_control' => array(
-                    'name'       => __( 'Allow Keyboard Control', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Allow Keyboard Control', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes',
                 ),
                 'intb_show_progress' => array(
-                    'name'       => __( 'Enable Progress', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Progress', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'no'
                 ),
                 'intb_enable_next_button' => array(
-                    'name'       => __( 'Enable Next Button', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Next Button', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes'
                 ),
                 'intb_enable_previous_button' => array(
-                    'name'       => __( 'Enable Previous Button', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Previous Button', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes'
                 ),
                 'intb_show_close_button' => array(
-                    'name'       => __( 'Show Close Button', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Show Close Button', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes'
                 ),
                 'intb_next_button_text' => array(
-                    'name'       => __( 'Next Button Text', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Next Button Text', 'interactive-tour-builder' ),
                     'field_type' => 'intbtext',
-                    'default'    => __( 'Next', 'interactive-tour-builder' ),
+                    'default'    => esc_html__( 'Next', 'interactive-tour-builder' ),
                 ),
                 'intb_previous_button_text' => array(
-                    'name'       => __( 'Previous Button Text', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Previous Button Text', 'interactive-tour-builder' ),
                     'field_type' => 'intbtext',
-                    'default'    => __( 'Previous', 'interactive-tour-builder' )
+                    'default'    => esc_html__( 'Previous', 'interactive-tour-builder' )
                 ),
                 'intb_done_button_text' => array(
-                    'name'       => __( 'Done Button Text', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Done Button Text', 'interactive-tour-builder' ),
                     'field_type' => 'intbtext',
-                    'default'    => __( 'Done', 'interactive-tour-builder' )
+                    'default'    => esc_html__( 'Done', 'interactive-tour-builder' )
                 ),
                 'intb_pop_over_class' => array(
-                    'name'       => __( 'Popup Over Class', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Popup Over Class', 'interactive-tour-builder' ),
                     'field_type' => 'intbtext',
-                    'default'    => __( 'driverjs-theme', 'interactive-tour-builder' )
+                    'default'    => esc_html__( 'driverjs-theme', 'interactive-tour-builder' )
                 ),
                 'intb_popover_offset' => array(
-                    'name'       => __( 'Popover Offset', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Popover Offset', 'interactive-tour-builder' ),
                     'field_type' => 'intbnumber',
                     'default'    => 10,
                     'step'       => 1, 
@@ -140,12 +140,12 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'max'        => 100
                 ),
                 'intb_overlay_color' => array(
-                    'name'       => __( 'Select Overlay Color', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Select Overlay Color', 'interactive-tour-builder' ),
                     'field_type' => 'intbcolor',
                     'default'    => '#000000'
                 ),
                 'intb_overlay_opacity' => array(
-                    'name'       => __( 'Overlay Opacity', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Overlay Opacity', 'interactive-tour-builder' ),
                     'field_type' => 'intbnumber',
                     'default'    => 0.5,
                     'step'       => 0.1,
@@ -153,7 +153,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'max'        => 1
                 ),
                 'intb_stage_padding' => array(
-                    'name'       => __( 'Stage Padding', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Stage Padding', 'interactive-tour-builder' ),
                     'field_type' => 'intbnumber',
                     'default'    => 10,
                     'step'       => 1,
@@ -161,7 +161,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'max'        => 100
                 ),
                 'intb_stage_radius' => array(
-                    'name'       => __( 'Stage Radius', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Stage Radius', 'interactive-tour-builder' ),
                     'field_type' => 'intbnumber',
                     'default'    => 5,
                     'step'       => 1,
@@ -169,46 +169,54 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'max'        => 100
                 ),
                 'intb_enable_cookie' => array(
-                    'name'       => __( 'Enable Cookie Limit', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Enable Cookie Limit', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
                     'default'    => 'yes',
-                    'desc'       => __( 'Enable this option to set a cookie limit for the tour. When enabled, the tour will only show once per user for a specified period (e.g., 30 days).', 'interactive-tour-builder' )
+                    'desc'       => esc_html__( 'Enable this option to set a cookie limit for the tour. When enabled, the tour will only show once per user for a specified period (e.g., 30 days).', 'interactive-tour-builder' )
                 ),
                 'intb_display_limit' => array(
-                    'name'       => __( 'Display Limit', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Display Limit', 'interactive-tour-builder' ),
                     'field_type' => 'intbnumber',
                     'default'    => 5,
                     'step'       => 1,
                     'min'        => 1,
                     'max'        => 100,
-                    'desc'       => __( 'Set the maximum number of steps to be displayed in the tour. The tour will stop once this limit is reached.', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'Set the maximum number of steps to be displayed in the tour. The tour will stop once this limit is reached.', 'interactive-tour-builder' ),
+                ),
+                'intb_display_after_second' => array(
+                    'name'       => esc_html__( 'Display after second', 'interactive-tour-builder' ),
+                    'field_type' => 'intbnumber',
+                    'default'    => 2,
+                    'step'       => 1,
+                    'min'        => 0,
+                    'max'        => 20,
+                    'desc'       =>  esc_html__( 'Set the number of seconds after which the tour step will be displayed. Adjust the time based on your desired delay before showing the next step.', 'interactive-tour-builder' ),
                 ),
                 'intb_display_scroll' => array(
-                    'name'       => __( 'Display on Scroll from Top', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Display on Scroll from Top', 'interactive-tour-builder' ),
                     'field_type' => 'intbbutton',
                     'default'    => '',
                     'pro_link'   => '#',
-                    'button_text'=> __( 'Buy Pro', 'interactive-tour-builder' ),
-                    'desc'       => __( 'Enable the tour to display when the user scrolls to a specific position on the page. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
-                    'row_class'  => 'intb-pro-row',
-                ),
-
-                'intb_display_after_second' => array(
-                    'name'       => __( 'Display After Seconds', 'interactive-tour-builder' ),
-                    'field_type' => 'intbbutton',
-                    'default'    => '',
-                    'pro_link'   => '#',
-                    'button_text'=> __( 'Buy Pro', 'interactive-tour-builder' ),
-                    'desc'       => __( 'Trigger the tour to display after a specified number of seconds. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
+                    'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'Enable the tour to display when the user scrolls to a specific position on the page. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
                 ),
                 'intb_element_to_click' => array(
-                    'name'       => __( 'Display After Click to Element', 'interactive-tour-builder' ),
+                    'name'       => esc_html__( 'Display After Click to Element', 'interactive-tour-builder' ),
                     'field_type' => 'intbbutton',
                     'default'    => '',
                     'pro_link'   => '#',
-                    'button_text'=> __( 'Buy Pro', 'interactive-tour-builder' ),
-                    'desc'       => __( 'Show the tour after the user clicks on a specific element. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
+                    'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'Show the tour after the user clicks on a specific element. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
+                    'row_class'  => 'intb-pro-row',
+                ),
+                'intb_enable_wp_admin' => array(
+                    'name'       => esc_html__( 'Enable On Wordpress admin', 'interactive-tour-builder' ),
+                    'field_type' => 'intbbutton',
+                    'default'    => '',
+                    'pro_link'   => '#',
+                    'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
+                    'desc'       => esc_html__( 'Enable guided tours for the WordPress admin dashboard. Upgrade to the Pro version to activate this feature.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
                 ),
             );

@@ -19,8 +19,9 @@ if( !function_exists( 'intb_get_template' ) ) :
         if ( ! file_exists( $template ) ) :
             return new WP_Error( 
                 'error', 
+                // Translators: %s is the template file path.
                 sprintf( 
-                    esc_html( '%s does not exist.', 'interactive-tour-builder' ), 
+                    esc_html__( '%s does not exist.', 'interactive-tour-builder' ), 
                     '<code>' . $template . '</code>' 
                 ) 
             );
