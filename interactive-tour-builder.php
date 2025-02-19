@@ -1,13 +1,12 @@
 <?php
 /**
  * Plugin Name:       Interactive Tour Builder
- * Plugin URI:        https://www.jthemes.com/
  * Description:       Create immersive and interactive tours for your website with the Interactive Tour Builder plugin. Engage your audience by showcasing key features, areas, or products through step-by-step virtual tours, pop-up tooltips, and guided highlights.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.4
- * Author:            jthemesstudio
- * Author URI:        https://www.jthemes.com/
+ * Author:            SpiderWares
+ * Author URI:        https://spiderwares.com/
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       interactive-tour-builder
@@ -36,7 +35,7 @@ if ( ! defined( 'INTB_URL' ) ) {
 }
 
 if ( ! defined( 'INTB_UPGRADE_URL' ) ) {
-    define( 'INTB_UPGRADE_URL', 'https://www.jthemes.com/' ); // Define the upgrade URL.
+    define( 'INTB_UPGRADE_URL', 'https://spiderwares.com/' ); // Define the upgrade URL.
 }
 
 // Include the main INTB class file.

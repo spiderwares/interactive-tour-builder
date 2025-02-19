@@ -21,10 +21,10 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
         }
         
         public function enqueue_driver_js() {
-            wp_enqueue_script( 'driver-script', INTB_URL . 'assets/js/intb-driver-script.js', array(), INTB_VERSION, false );
+            wp_enqueue_script( 'driver-script', INTB_URL . 'assets/js/driver.js', array(), INTB_VERSION, false );
             wp_enqueue_script('wp-hooks', includes_url('js/hooks.js'), array('jquery'), INTB_VERSION, true);
             wp_enqueue_script( 'intb-tour-helper', INTB_URL . 'assets/js/intb-tour-helper.js', array( 'jquery', 'wp-hooks' ), INTB_VERSION, true );
-            wp_enqueue_style( 'driver-style', INTB_URL . 'assets/css/intb-driver-style.css', array(), INTB_VERSION, false );
+            wp_enqueue_style( 'driver-style', INTB_URL . 'assets/css/driver.css', array(), INTB_VERSION, false );
 
             $tours = get_posts( array(
                 'post_type'   => 'intb_tour',

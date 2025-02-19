@@ -1,6 +1,6 @@
 # Interactive Tour Builder
 
-**Contributors:** jthemesstudio, spiderwares  
+**Contributors:** SpiderWares  
 **Tags:** interactive tour, guided tour, driver.js, user experience, product tour
 **Tested up to:** 6.7 
 **Stable tag:** 1.0.0

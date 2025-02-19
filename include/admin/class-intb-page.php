@@ -151,7 +151,7 @@ if ( ! class_exists( 'INTB_Page_MetaBox' ) ) :
 
             if ( isset( $_POST['intb_selected_single_page'] ) && is_array( $_POST['intb_selected_single_page'] ) ) :
                 // Sanitize and validate the values (ensure they are strings)
-                $selected_pages = array_map( 'sanitize_text_field', $_POST['intb_selected_single_page'] );
+                $selected_pages = array_map( 'sanitize_text_field', wp_unslash( $_POST['intb_selected_single_page'] ) );
                 
                 // Update the post meta with the sanitized array of slugs
                 update_post_meta( $post_id, '_intb_selected_single_page', $selected_pages );

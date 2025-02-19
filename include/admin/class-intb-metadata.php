@@ -71,7 +71,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'name'       => '',
                     'field_type' => 'intbbutton',
                     'default'    => '',
-                    'pro_link'   => '#',
+                    'pro_link'   => INTB_UPGRADE_URL,
                     'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
                     'desc'       => esc_html__( 'To enable more styles, you need to purchase the Pro version.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
@@ -196,7 +196,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'name'       => esc_html__( 'Display on Scroll from Top', 'interactive-tour-builder' ),
                     'field_type' => 'intbbutton',
                     'default'    => '',
-                    'pro_link'   => '#',
+                    'pro_link'   => INTB_UPGRADE_URL,
                     'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
                     'desc'       => esc_html__( 'Enable the tour to display when the user scrolls to a specific position on the page. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
@@ -205,7 +205,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'name'       => esc_html__( 'Display After Click to Element', 'interactive-tour-builder' ),
                     'field_type' => 'intbbutton',
                     'default'    => '',
-                    'pro_link'   => '#',
+                    'pro_link'   => INTB_UPGRADE_URL,
                     'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
                     'desc'       => esc_html__( 'Show the tour after the user clicks on a specific element. Unlock this feature by upgrading to the Pro version.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
@@ -214,7 +214,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'name'       => esc_html__( 'Enable On Wordpress admin', 'interactive-tour-builder' ),
                     'field_type' => 'intbbutton',
                     'default'    => '',
-                    'pro_link'   => '#',
+                    'pro_link'   => INTB_UPGRADE_URL,
                     'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
                     'desc'       => esc_html__( 'Enable guided tours for the WordPress admin dashboard. Upgrade to the Pro version to activate this feature.', 'interactive-tour-builder' ),
                     'row_class'  => 'intb-pro-row',
@@ -254,7 +254,9 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
 
             // Save repeater fields
             if ( isset( $_POST['intb_tour_meta_fields'] ) &&  is_array( $_POST['intb_tour_meta_fields'] ) ) :
-                $meta_data = wp_unslash( $_POST['intb_tour_meta_fields'] ) ;
+                $meta_data = array_map( function( $value ) {
+                    return is_array( $value ) ? array_map( 'sanitize_text_field', wp_unslash( $value ) ) : sanitize_text_field( wp_unslash( $value ) );
+                }, wp_unslash( $_POST['intb_tour_meta_fields'] ) );
 
                 foreach ( $meta_data as $key => $field ) :
                     $meta_data[ $key ]['title']          = isset( $field['title'] ) ? sanitize_text_field( $field['title'] ) : '';
@@ -268,7 +270,9 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
             endif;
 
             if ( isset( $_POST['intb_options'] ) && is_array( $_POST['intb_options'] ) ) :
-                $options_data = wp_unslash( $_POST['intb_options'] );
+                $options_data = array_map( function( $value ) {
+                    return is_array( $value ) ? array_map( 'sanitize_text_field', wp_unslash( $value ) ) : sanitize_text_field( wp_unslash( $value ) );
+                }, wp_unslash( $_POST['intb_options'] ) );
 
                 foreach ( $this->fields as $key => $field ) :
                     $options_data[ $key ] = isset( $options_data[ $key ] ) ? true : false;
@@ -277,6 +281,12 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                 update_post_meta( $post_id, 'intb_options', $options_data );
             endif;
             
+        }
+
+        public function sanitize_recursive($data) {
+            return is_array($data) 
+                ? array_map('sanitize_recursive', $data) 
+                : sanitize_text_field($data);
         }
     }
 
