@@ -31,36 +31,60 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
                 'post_status' => 'publish',
                 'numberposts' => -1,
             ) );
-        
+            
+            $current_user    = wp_get_current_user();
+            $user_data       = array(
+                'username'     => $current_user->user_login,
+                'user_email'   => $current_user->user_email,
+                'display_name' => $current_user->display_name,
+                'admin_email'  => get_option( 'admin_email' ),
+            );
+
+            $user_roles   = ( ! empty( $current_user->roles ) ) ? $current_user->roles : array( 'guest' );
+            
             $tour_data = array();
             foreach ( $tours as $tour ) :
-                $options_data       = get_post_meta( $tour->ID, 'intb_options', true );
-                $meta_data          = get_post_meta( $tour->ID, '_intb_tour_meta_fields', true );
-                $selcted_pages      = get_post_meta( $tour->ID, '_intb_selected_pages', true );
-                $saved_single_pages = get_post_meta( $tour->ID, '_intb_selected_single_page', true );
-                $selcted_terms      = get_post_meta( $tour->ID, '_intb_selected_taxonomies', true );
 
-                if ( !empty( $selcted_pages ) && is_page( $selcted_pages ) ) :
-                    $tour_data[] = array(
-                        'id'          => $tour->ID,
-                        'title'       => $tour->post_title,
-                        'options'     => $options_data ? $options_data : array(),
-                        'meta_fields' => $meta_data ? $meta_data : array(),
-                    );
-                endif;
+            $allowed = apply_filters( 'intb_filter_tour_by_role', true, $tour, $user_roles );
 
-                if ( !empty( $saved_single_pages ) && is_singular( $saved_single_pages ) ) :
-                    $tour_data[] = array(
-                        'id'          => $tour->ID,
-                        'title'       => $tour->post_title,
-                        'options'     => $options_data ? $options_data : array(),
-                        'meta_fields' => $meta_data ? $meta_data : array(),
-                    );
-                endif;
+                if ( $allowed ) :
+                    $options_data       = get_post_meta( $tour->ID, 'intb_options', true );
+                    $meta_data          = get_post_meta( $tour->ID, '_intb_tour_meta_fields', true );
+                    $selcted_pages      = get_post_meta( $tour->ID, '_intb_selected_pages', true );
+                    $saved_single_pages = get_post_meta( $tour->ID, '_intb_selected_single_page', true );
+                    $selcted_terms      = get_post_meta( $tour->ID, '_intb_selected_taxonomies', true );
 
-                if ( is_tax() && ! empty( $selcted_terms ) && is_array( $selcted_terms ) ) :
-                    $current_term_id = get_queried_object()->term_id;
-                    if ( in_array( $current_term_id, $selcted_terms ) ) :
+                    if ( !empty( $selcted_pages ) && is_page( $selcted_pages ) ) :
+                        $tour_data[] = array(
+                            'id'          => $tour->ID,
+                            'title'       => $tour->post_title,
+                            'options'     => $options_data ? $options_data : array(),
+                            'meta_fields' => $meta_data ? $meta_data : array(),
+                        );
+                    endif;
+
+                    if ( !empty( $saved_single_pages ) && is_singular( $saved_single_pages ) ) :
+                        $tour_data[] = array(
+                            'id'          => $tour->ID,
+                            'title'       => $tour->post_title,
+                            'options'     => $options_data ? $options_data : array(),
+                            'meta_fields' => $meta_data ? $meta_data : array(),
+                        );
+                    endif;
+
+                    if ( is_tax() && ! empty( $selcted_terms ) && is_array( $selcted_terms ) ) :
+                        $current_term_id = get_queried_object()->term_id;
+                        if ( in_array( $current_term_id, $selcted_terms ) ) :
+                            $tour_data[] = array(
+                                'id'          => $tour->ID,
+                                'title'       => $tour->post_title,
+                                'options'     => $options_data ? $options_data : array(),
+                                'meta_fields' => $meta_data ? $meta_data : array(),
+                            );
+                        endif;
+                    endif;
+
+                    if ( is_admin() && isset($options_data['intb_enable_wp_admin']) && $options_data['intb_enable_wp_admin'] === 'yes' ) :
                         $tour_data[] = array(
                             'id'          => $tour->ID,
                             'title'       => $tour->post_title,
@@ -69,25 +93,7 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
                         );
                     endif;
                 endif;
-
-                if ( is_admin() && isset($options_data['intb_enable_wp_admin']) && $options_data['intb_enable_wp_admin'] === 'yes' ) :
-                    $tour_data[] = array(
-                        'id'          => $tour->ID,
-                        'title'       => $tour->post_title,
-                        'options'     => $options_data ? $options_data : array(),
-                        'meta_fields' => $meta_data ? $meta_data : array(),
-                    );
-                endif;
-
             endforeach;
-
-            $current_user    = wp_get_current_user();
-            $user_data       = array(
-                'username'     => $current_user->user_login,
-                'user_email'   => $current_user->user_email,
-                'display_name' => $current_user->display_name,
-                'admin_email'  => get_option( 'admin_email' ),
-            );
 
             wp_localize_script( 'intb-tour-helper', 'intbTourData', array(
                 'tours'         => $tour_data,

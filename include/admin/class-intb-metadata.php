@@ -8,6 +8,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
     class INTB_Tour_Builder_Meta_Box {
 
         public $fields;
+        public $role_fields;
 
         public function __construct() {
             $this->event_handler();
@@ -35,6 +36,15 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                 'intb_tour',
                 'normal',
                 'default'
+            );
+
+            add_meta_box(
+                'intb_tour_role_condition_meta_box',
+                esc_html__( 'Interactive Tour Builder Role Condition', 'interactive-tour-builder' ),
+                [ $this, 'role_condition_meta_box' ],
+                'intb_tour',
+                'normal',
+                'low'
             );
 
         }
@@ -240,6 +250,36 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
             );
         }
 
+        public function intb_user_role_meta_fields() {
+            $this->role_fields['guest'] = array(
+                'name'       => esc_html__( 'Role-wise Condition', 'interactive-tour-builder' ),
+                'field_type' => 'intbbutton',
+                'default'    => '',
+                'pro_link'   => INTB_UPGRADE_URL,
+                'button_text'=> esc_html__( 'Buy Pro', 'interactive-tour-builder' ),
+                'desc'       => esc_html__( 'Enable guided tours with user role conditions. Upgrade to the Pro version to unlock this feature.', 'interactive-tour-builder' ),
+                'row_class'  => 'intb-pro-row',
+            );
+        
+            $this->role_fields = apply_filters( 'intb_user_role_meta_fields', $this->role_fields );
+        }
+
+
+        public function role_condition_meta_box( $post ) {
+            $this->intb_user_role_meta_fields();
+            $options = get_post_meta( $post->ID, 'intb_role_condition', true );
+            $options = is_array( $options ) ? $options : [];
+
+            intb_get_template(
+                'metabox/tour-builder-options.php',
+                array(
+                    'metaKey' => 'intb_role_condition_meta_box',
+                    'fields'  => $this->role_fields,
+                    'options' => $options,
+                )
+            );
+        }
+
         public function save_meta_box_data( $post_id ) {
 
             // Check for autosave or invalid nonce
@@ -279,6 +319,12 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                 endforeach;
 
                 update_post_meta( $post_id, 'intb_options', $options_data );
+            endif;
+
+            if ( isset( $_POST['intb_role'] ) && is_array( $_POST['intb_role'] ) ) :
+                $role_data = array_map( 'sanitize_text_field', wp_unslash( $_POST['intb_role'] ) );
+            
+                update_post_meta( $post_id, 'intb_role_condition', $role_data );
             endif;
             
         }

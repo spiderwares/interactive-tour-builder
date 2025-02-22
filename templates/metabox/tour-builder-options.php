@@ -104,6 +104,17 @@ endif;
                             );
                             break;
 
+                        case "intbuserrole":
+                            intb_get_template(
+                                'fields/userrole-field.php',
+                                array(
+                                    'field'     => $field,
+                                    'field_Val' => $field_Val,
+                                    'field_Key' => $field_Key,
+                                )
+                            );
+                            break;
+
                     }
                     ?>
                 </tr>

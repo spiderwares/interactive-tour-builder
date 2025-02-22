@@ -89,12 +89,12 @@ if ( ! class_exists( 'INTB_Page_MetaBox' ) ) :
             $intb_objects = get_taxonomies( $taxonomy_args, 'objects' );
             
             // Loop through taxonomy objects
-            foreach ( $intb_objects as $intb_taxonomy_slug => $intb_taxonomy_object ) {
+            foreach ( $intb_objects as $intb_taxonomy_slug => $intb_taxonomy_object ) :
                 
                 // Skip built-in (WP) private taxonomies (e.g., 'nav_menu', 'post_tag', etc.)
-                if ( $intb_taxonomy_object->_builtin && ! $intb_taxonomy_object->public ) {
+                if ( $intb_taxonomy_object->_builtin && ! $intb_taxonomy_object->public ) :
                     continue;
-                }
+                endif;
             
                 // Get terms for each taxonomy
                 $intb_terms = get_terms( array(
@@ -103,15 +103,15 @@ if ( ! class_exists( 'INTB_Page_MetaBox' ) ) :
                 ));
             
                 // Store terms for taxonomies
-                if ( ! is_wp_error( $intb_terms ) && ! empty( $intb_terms ) ) {
+                if ( ! is_wp_error( $intb_terms ) && ! empty( $intb_terms ) ) :
                     $intb_taxonomies[ $intb_taxonomy_slug ] = array_map( function( $term ) {
                         return array(
                             'ID'   => $term->term_id,
                             'name' => $term->name
                         );
                     }, $intb_terms );
-                }
-            }
+                endif;
+            endforeach;
             
             // Fetch saved taxonomy terms for the post
             $saved_taxonomy_terms = get_post_meta( $post->ID, '_intb_selected_taxonomies', true );
