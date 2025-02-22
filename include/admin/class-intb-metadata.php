@@ -252,7 +252,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
 
         public function intb_user_role_meta_fields() {
             $this->role_fields['guest'] = array(
-                'name'       => esc_html__( 'Role-wise Condition', 'interactive-tour-builder' ),
+                'name'       => esc_html__( 'Display User Role Based', 'interactive-tour-builder' ),
                 'field_type' => 'intbbutton',
                 'default'    => '',
                 'pro_link'   => INTB_UPGRADE_URL,
