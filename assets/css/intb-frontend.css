@@ -1,0 +1,87 @@
+/*-------------------- Style 2 start ---------------- */
+
+.driver-popover.intb-style2 {
+    background-color: #fde047;
+    color: #000;
+}
+
+.driver-popover.intb-style2 .driver-popover-title {
+    font-size: 20px;
+}
+
+.driver-popover.intb-style2 .driver-popover-title,
+.driver-popover.intb-style2 .driver-popover-description,
+.driver-popover.intb-style2 .driver-popover-progress-text {
+    color: #000;
+}
+
+.driver-popover.intb-style2 .driver-popover-progress-text {
+    color: #000;
+    margin-right: 10px;
+}
+
+.driver-popover.intb-style2 button {
+    flex: 1;
+    text-align: center;
+    background-color: #000;
+    color: #ffffff;
+    border: 2px solid #000;
+    text-shadow: none;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 6px;
+}
+
+.driver-popover.intb-style2 button:hover {
+    background-color: #000;
+    color: #ffffff;
+}
+
+.driver-popover.intb-style2 .driver-popover-navigation-btns {
+    justify-content: space-between;
+    gap: 3px;
+}
+
+.driver-popover.intb-style2 .driver-popover-close-btn {
+    color: #252525;
+    font-size: 32px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+.driver-popover.intb-style2 .driver-popover-close-btn:hover {
+    color: #252525;
+    background-color: transparent;
+}
+
+.driver-popover.intb-style2 .driver-popover-arrow-side-left.driver-popover-arrow {
+    border-left-color: #fde047;
+}
+
+.driver-popover.intb-style2 .driver-popover-arrow-side-right.driver-popover-arrow {
+    border-right-color: #fde047;
+}
+
+.driver-popover.intb-style2 .driver-popover-arrow-side-top.driver-popover-arrow {
+    border-top-color: #fde047;
+}
+
+.driver-popover.intb-style2 .driver-popover-arrow-side-bottom.driver-popover-arrow {
+    border-bottom-color: #fde047;
+}
+
+.driver-popover.popo.intb-style2 button.driver-popover-close-btn {
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.driver-popover.popo.intb-style2{
+    max-width: 320px;
+    padding: 15px;
+}
+
+/*-------------------- Style 2 end ---------------- */

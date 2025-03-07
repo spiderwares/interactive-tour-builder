@@ -40,7 +40,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
 
             add_meta_box(
                 'intb_tour_role_condition_meta_box',
-                esc_html__( 'Interactive Tour Builder Role Condition', 'interactive-tour-builder' ),
+                esc_html__( 'Display User Role Based', 'interactive-tour-builder' ),
                 [ $this, 'role_condition_meta_box' ],
                 'intb_tour',
                 'normal',
@@ -75,7 +75,7 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                         'style5'    => esc_html__( 'Style 5', 'interactive-tour-builder' ),
                     ),
                     'desc'       => esc_html__( 'Choose a style for the tour.', 'interactive-tour-builder' ),
-                    'disabled_options' => array('style2', 'style3', 'style4', 'style5'),
+                    'disabled_options' => array('style3', 'style4', 'style5'),
                 ),
                 'intb_other_style' => array(
                     'name'       => '',
@@ -293,21 +293,21 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
        
 
             // Save repeater fields
-            if ( isset( $_POST['intb_tour_meta_fields'] ) &&  is_array( $_POST['intb_tour_meta_fields'] ) ) :
-                $meta_data = array_map( function( $value ) {
-                    return is_array( $value ) ? array_map( 'sanitize_text_field', wp_unslash( $value ) ) : sanitize_text_field( wp_unslash( $value ) );
-                }, wp_unslash( $_POST['intb_tour_meta_fields'] ) );
-
+            if ( isset( $_POST['intb_tour_meta_fields'] ) && is_array( $_POST['intb_tour_meta_fields'] ) ) :
+                $meta_data = wp_unslash( $_POST['intb_tour_meta_fields'] ); // Directly unslash the input
+            
                 foreach ( $meta_data as $key => $field ) :
                     $meta_data[ $key ]['title']          = isset( $field['title'] ) ? sanitize_text_field( $field['title'] ) : '';
                     $meta_data[ $key ]['target_element'] = isset( $field['target_element'] ) ? sanitize_text_field( $field['target_element'] ) : '';
-                    $meta_data[ $key ]['description']    = isset( $field['description'] ) ? sanitize_textarea_field( $field['description'] ) : '';
+                    $meta_data[ $key ]['description']    = isset( $field['description'] ) ? wp_kses_post( $field['description'] ) : ''; // Allow HTML safely
                     $meta_data[ $key ]['side']           = isset( $field['side'] ) ? sanitize_text_field( $field['side'] ) : '';
                     $meta_data[ $key ]['align']          = isset( $field['align'] ) ? sanitize_text_field( $field['align'] ) : '';
                 endforeach;
-
+            
                 update_post_meta( $post_id, '_intb_tour_meta_fields', $meta_data );
             endif;
+            
+            
 
             if ( isset( $_POST['intb_options'] ) && is_array( $_POST['intb_options'] ) ) :
                 $options_data = array_map( function( $value ) {

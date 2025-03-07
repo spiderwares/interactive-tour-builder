@@ -1,9 +1,9 @@
 # Interactive Tour Builder
 
-**Contributors:** SpiderWares  
+**Contributors:** jthemesstudio, spiderwares  
 **Tags:** interactive tour, guided tour, driver.js, user experience, product tour
 **Tested up to:** 6.7 
-**Stable tag:** 1.0.0
+**Stable tag:** 1.0.5
 **License:** GPL-2.0+  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.txt  
 
@@ -13,57 +13,97 @@ Build interactive tours for your website with guided highlights, tooltips, and s
 
 Interactive Tour Builder is a powerful WordPress plugin that lets you create engaging and interactive tours for your website. It's perfect for highlighting key features, products, or areas with step-by-step guidance, making it ideal for onboarding, product showcases, and more.
 
+## Presentation  
+
+[**Premium**](https://codecanyon.net/item/wordpress-interactive-step-by-step-website-tour-builder/56730735) |  [**Demo**](https://plugins.jthemes.net/interactive-tour-builder/) |   [**Documentation**](https://plugins.jthemes.net/docs/interactive-tour-builder/)
+
 ## Watch a Quick Tutorial
-<iframe width="800" height="375" src="https://www.youtube.com/embed/a--Pc7KgCRA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-### Key Features
-
-- **User-Friendly and Lightweight**: Simple to use with fast performance.  
-- **Customizable Cart Button**: Includes options for cart icon customization.  
-- **Instant Cart Updates**: Ajax-based cart refresh after adding or removing items.  
-- **Category-Specific Display**: Show products by selected categories.  
-- **Coupon Code Support**: Apply or remove coupons directly from the cart page with discount messages.  
-- **Advanced Styling Options**: Customize cart and product list styles, typography, and colors.  
-- **Product Support**: Works seamlessly with variable and grouped products.  
-- **Cart Details Breakdown**: Clear display of cart subtotal, discounts, fees, shipping charges, and total.  
-- **Elementor Widget**: Integrates a Interactive Tour Builder widget for Elementor.  
-- **Responsive Design**: Fully optimized for all devices.  
-- **Quick Links**: Direct links to cart and checkout pages.  
-- **Custom Features**:
-  - Enable or disable cart and checkout buttons.  
-  - Template overwrite for enhanced flexibility.  
-  - Custom CSS support for personalized design.  
-- **Cart Product Counter**: Track the number of items in the cart.  
-- **Comprehensive Functionality**:
-  - Ajax-based add/remove items from the cart with instant updates.  
-  - Support for adding variable products to the cart.  
-- **Documentation and Support**:
-  - Regular updates and maintenance.  
-  - Detailed documentation for easy setup and usage.  
-  - Friendly and responsive support team.  
-- **Coding Standards**: Adheres to PHPCS/WPCS coding standards for high-quality code.
+<iframe width="800" height="375" src="https://www.youtube.com/embed/_1qlRGo5f7Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## Key Features
+## 🚀 Key Features  
 
-- **Simple Setup and Integration**: Quick to install and easy to configure with minimal setup required.
-- **Seamless Integration**: Provides smooth and intuitive user experiences for creating guided tours.
-- **Customizable Tour Styles**: Modify tour step designs, typography, and colors to match your website's theme.
-- **Multi-Step Tour Setup**: Create dynamic and interactive tours with multiple steps for better guidance.
-- **Customizable Tour Button**: Control the appearance and position of the tour initiation button on the page.
-- **Dynamic Page Selection**: Easily choose which pages to display the tour on, using a simple interface.
-- **Content Highlighting**: Highlight specific elements on the page during the tour, making it easy for users to follow.
-- **Advanced Trigger Options**: Initiate tours based on user actions or page load, providing flexibility in how and when tours start.
-- **Responsive Design**: Fully optimized for desktops, tablets, and mobile devices for seamless use across all screen sizes.
-- **Built-in Exit Option**: Give users the option to exit or skip the tour at any point for better user control.
-- **Quick and Easy Tour Editing**: Modify tours through an intuitive admin interface.
-- **Global and Page-Specific Tours**: Control whether your tour is applied site-wide or just to a specific page or section.
-- **Localization Support**: Translate and localize your tour content to accommodate different languages.
-- **Documentation and Support**:
-  - Regular updates and maintenance.  
-  - Detailed documentation for easy setup and usage.  
-  - Friendly and responsive support team.  
-- **Coding Standards**: Adheres to PHPCS/WPCS coding standards for high-quality code.
+The **Interactive Tour Builder** plugin empowers you to create **dynamic, engaging, and fully customizable** tours for your website visitors. Here’s what makes it stand out:  
+
+##### 🎬 **Engaging Animations**  
+- Enhance user experience with **smooth, eye-catching animations** for each tour step, making interactions visually appealing and engaging.  
+
+##### 🔄 **Seamless Smooth Scroll**  
+- Enable **fluid scrolling** between tour steps, ensuring an uninterrupted and immersive experience.  
+
+##### 🎹 **Keyboard Navigation Support**  
+- Improve accessibility by allowing users to **navigate tours using keyboard controls**, making interactions effortless.  
+
+##### 📊 **Progress Indicator**  
+- Keep users informed with a **built-in progress bar**, showing how far they’ve progressed in the tour.  
+
+##### ⏭ **Next Button Customization**  
+- Fully customizable **Next** button to guide users forward, tailored to match your content and design preferences.  
+
+##### ⏮ **Previous Button Navigation**  
+- Let users go back through the tour with a **Previous** button, giving them complete control over their experience.  
+
+##### ❌ **Optional Close Button**  
+- Offer users the flexibility to **exit the tour anytime** with a Close button.  
+
+##### ✍️ **Customizable Button Text**  
+- Personalize **Next, Previous, and Done button text** to align with your site’s tone and user experience.  
+
+##### 🎨 **Custom Popup Styling**  
+- Apply a **custom CSS class** to tour popups, ensuring they seamlessly blend with your site’s branding.  
+
+##### 📍 **Popover Position Adjustment**  
+- Adjust the **popover positioning** for optimal clarity, ensuring tour steps appear exactly where needed.  
+
+##### 🌈 **Customizable Overlay Color & Opacity**  
+- **Match your brand’s color scheme** with custom overlay colors and adjust the opacity for the perfect visual balance.  
+
+##### 🖼 **Stage Padding & Rounded Corners**  
+- Fine-tune the **padding around tour steps** and apply **rounded corners** for a sleek, modern look.  
+
+##### 🍪 **Cookie-Based Display Limit**  
+- Set a **cookie limit** to control how often the tour is shown, preventing unnecessary repetitions for returning users.  
+
+##### 🔄 **Tour Display Frequency Control**  
+- Limit the number of times a tour appears, ensuring the right level of guidance without overwhelming users.  
+
+##### ⏳ **Customizable Display Delay**  
+- Control when the tour appears after the page loads, optimizing the timing based on user behavior.  
+
+##### 🎯 **Targeted Tour Population**  
+- Automatically **populate tours for specific pages, posts, or taxonomies**, ensuring relevant guidance across different content types.  
+
+
+
+## 🚀 Premium Features  
+
+Upgrade to the premium version and unlock powerful features that enhance your interactive tour-building experience:  
+
+##### ✨ **Dynamic Content**  
+- Personalize your tours with **dynamic variables** like post titles, usernames, and more.  
+- Apply **custom filters** to modify content dynamically based on user roles, post types, or other conditions.  
+
+##### 🎨 **Interactive Styles**  
+- Create visually engaging and **interactive step-by-step tours** with advanced styling options.  
+- Customize tooltips, animations, and transitions to match your site's branding.  
+
+##### 🔄 **Populate Tour Builder on Scroll**  
+- Trigger and update your tours as users scroll through the page.  
+- Enhance engagement with **scroll-based tour steps** that appear at the right moment.  
+
+##### 🖱 **Populate Tour Builder on Click**  
+- Display specific tour steps when users **click on buttons, links, or elements**.  
+- Guide users seamlessly through your website's key features.  
+
+##### 🔧 **Works in WordPress Admin Area**  
+- Build and display tours within the **WordPress dashboard** for a better onboarding experience.  
+- Perfect for guiding new users, team members, or clients through the admin interface.  
+
+##### 👥 **User Role-Based Features**  
+- Create **customized tours** for different user roles (admins, editors, subscribers, etc.).  
+- Ensure each user gets relevant guidance based on their access level.  
+
+💡 **Upgrade to Premium Today!** Get access to these exclusive features and take your tour-building experience to the next level!  
 
 
 
@@ -87,13 +127,19 @@ A: Yes, the plugin is fully responsive and optimized for all devices, including 
 ## Screenshots
 
 1. **Interactive Tour Popup:** Preview of the interactive tour popup as displayed to users, showcasing the guided steps during the tour.
-2. **Tour Builder Steps:** Screenshot of the plugin settings page where you can configure each step of the interactive tour.
-3. **Interactive Tour Builder Options:** Screenshot of the plugin settings page where you can configure options related to the tour's flow and appearance.
-4. **Interactive Tour Builder Options:** Screenshot displaying the settings page for customizing additional aspects of the interactive tour, such as step content and layout.
-5. **Auto Populate On:** Screenshot of the plugin settings page where you can configure automatic population of specific tour elements, streamlining the user experience.
+2. **Tour Popup with Image:** Screenshot of the tour popup featuring an image, enhancing the visual presentation of the guided tour.
+3. **Popup with Simple Highlight:** Screenshot of a basic highlight effect used to draw attention to a specific area without additional popups.
+4. **Highlight with Popover:** Screenshot of an element highlight combined with a popover, offering additional contextual information.
+5. **Tour Builder Steps:** Screenshot of the plugin settings page where you can configure each step of the interactive tour.
+6. **Interactive Tour Builder Options:** Screenshot of the plugin settings page where you can configure options related to the tour's flow and appearance.
+7. **Interactive Tour Builder Options:** Screenshot displaying the settings page for customizing additional aspects of the interactive tour, such as step content and layout.
+8. **Auto Populate On:** Screenshot of the plugin settings page where you can configure automatic population of specific tour elements, streamlining the user experience.
 
 
 ## Changelog
+
+### 1.0.3
+- Add ability to upload image in popup
 
 ### 1.0.0
 - Initial release.

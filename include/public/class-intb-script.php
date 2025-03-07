@@ -25,6 +25,7 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
             wp_enqueue_script('wp-hooks', includes_url('js/hooks.js'), array('jquery'), INTB_VERSION, true);
             wp_enqueue_script( 'intb-tour-helper', INTB_URL . 'assets/js/intb-tour-helper.js', array( 'jquery', 'wp-hooks' ), INTB_VERSION, true );
             wp_enqueue_style( 'driver-style', INTB_URL . 'assets/css/driver.css', array(), INTB_VERSION, false );
+            wp_enqueue_style( 'intb-frontend', INTB_URL . 'assets/css/intb-frontend.css', array(), INTB_VERSION, false );
 
             $tours = get_posts( array(
                 'post_type'   => 'intb_tour',
