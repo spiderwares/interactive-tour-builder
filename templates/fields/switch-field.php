@@ -4,8 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) :
 endif;
 /* 
     Switch Field Template
-*/
-?>
+*/ ?>
 <td>
     <div class="intb-switch-field">
         <input type="hidden" name="intb_options[<?php echo esc_attr( $field_Key ); ?>]" value="no" />
@@ -13,7 +12,10 @@ endif;
                id="<?php echo esc_attr( $field_Key ); ?>" 
                name="intb_options[<?php echo esc_attr( $field_Key ); ?>]" 
                value="yes" 
-               <?php checked( $field_Val, 'yes' ); ?> />
+               <?php checked( $field_Val, 'yes' ); 
+               if ( ! empty( $field['data-show'] ) ) : ?>
+                   data-show=".<?php echo esc_attr( $field['data-show'] ); ?>"
+               <?php endif; ?> />
         <label for="<?php echo esc_attr( $field_Key ); ?>">
         <span class="intb-switch-icon">
             <svg class="intb-icon-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" role="img">

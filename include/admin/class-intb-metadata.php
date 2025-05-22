@@ -73,9 +73,10 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                         'style3'    => esc_html__( 'Style 3', 'interactive-tour-builder' ),
                         'style4'    => esc_html__( 'Style 4', 'interactive-tour-builder' ),
                         'style5'    => esc_html__( 'Style 5', 'interactive-tour-builder' ),
+                        'style6'    => esc_html__( 'Style 6', 'interactive-tour-builder' ),
                     ),
                     'desc'       => esc_html__( 'Choose a style for the tour.', 'interactive-tour-builder' ),
-                    'disabled_options' => array('style3', 'style4', 'style5'),
+                    'disabled_options' => array('style3', 'style4', 'style5', 'style6'),
                 ),
                 'intb_other_style' => array(
                     'name'       => '',
@@ -101,6 +102,11 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'field_type' => 'intbswitch',
                     'default'    => 'yes',
                 ),
+                'intb_allow_close' => array(
+                    'name'       => esc_html__( 'Allow Close', 'interactive-tour-builder' ),
+                    'field_type' => 'intbswitch',
+                    'default'    => 'yes',
+                ),
                 'intb_show_progress' => array(
                     'name'       => esc_html__( 'Enable Progress', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
@@ -109,45 +115,54 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                 'intb_enable_next_button' => array(
                     'name'       => esc_html__( 'Enable Next Button', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
-                    'default'    => 'yes'
-                ),
-                'intb_enable_previous_button' => array(
-                    'name'       => esc_html__( 'Enable Previous Button', 'interactive-tour-builder' ),
-                    'field_type' => 'intbswitch',
-                    'default'    => 'yes'
-                ),
-                'intb_show_close_button' => array(
-                    'name'       => esc_html__( 'Show Close Button', 'interactive-tour-builder' ),
-                    'field_type' => 'intbswitch',
-                    'default'    => 'yes'
+                    'default'    => 'yes',
+                    'data-show'  => 'intb_enable_next_button',
                 ),
                 'intb_next_button_text' => array(
-                    'name'       => esc_html__( 'Next Button Text', 'interactive-tour-builder' ),
-                    'field_type' => 'intbtext',
-                    'default'    => esc_html__( 'Next', 'interactive-tour-builder' ),
+                    'name'          => esc_html__( 'Next Button Text', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbtext',
+                    'default'       => esc_html__( 'Next', 'interactive-tour-builder' ),
+                    'class'         => 'intb_enable_next_button',
+                    'placeholder'   => esc_html__( 'Enter Next button label', 'interactive-tour-builder' )
+                ),
+                'intb_enable_previous_button' => array(
+                    'name'          => esc_html__( 'Enable Previous Button', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbswitch',
+                    'default'       => 'yes',
+                    'data-show'     => 'intb_enable_previous_button',
                 ),
                 'intb_previous_button_text' => array(
-                    'name'       => esc_html__( 'Previous Button Text', 'interactive-tour-builder' ),
-                    'field_type' => 'intbtext',
-                    'default'    => esc_html__( 'Previous', 'interactive-tour-builder' )
+                    'name'          => esc_html__( 'Previous Button Text', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbtext',
+                    'default'       => esc_html__( 'Previous', 'interactive-tour-builder' ),
+                    'class'         => 'intb_enable_previous_button',
+                    'placeholder'   => esc_html__( 'Enter Previous button label', 'interactive-tour-builder' )
                 ),
+                'intb_show_close_button' => array(
+                    'name'          => esc_html__( 'Show Close Button', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbswitch',
+                    'default'       => 'yes'
+                ),
+
                 'intb_done_button_text' => array(
-                    'name'       => esc_html__( 'Done Button Text', 'interactive-tour-builder' ),
-                    'field_type' => 'intbtext',
-                    'default'    => esc_html__( 'Done', 'interactive-tour-builder' )
+                    'name'          => esc_html__( 'Done Button Text', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbtext',
+                    'default'       => esc_html__( 'Done', 'interactive-tour-builder' ),
+                    'placeholder'   => esc_html__( 'Enter Done button label', 'interactive-tour-builder' )
                 ),
                 'intb_pop_over_class' => array(
-                    'name'       => esc_html__( 'Popup Over Class', 'interactive-tour-builder' ),
-                    'field_type' => 'intbtext',
-                    'default'    => esc_html__( 'driverjs-theme', 'interactive-tour-builder' )
+                    'name'          => esc_html__( 'Popup Over Class', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbtext',
+                    'default'       => '',
+                    'placeholder'   => esc_html__( 'Set your custom class here', 'interactive-tour-builder' ),
                 ),
                 'intb_popover_offset' => array(
-                    'name'       => esc_html__( 'Popover Offset', 'interactive-tour-builder' ),
-                    'field_type' => 'intbnumber',
-                    'default'    => 10,
-                    'step'       => 1, 
-                    'min'        => 0, 
-                    'max'        => 100
+                    'name'          => esc_html__( 'Popover Offset', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbnumber',
+                    'default'       => 10,
+                    'step'          => 1, 
+                    'min'           => 0, 
+                    'max'           => 100
                 ),
                 'intb_overlay_color' => array(
                     'name'       => esc_html__( 'Select Overlay Color', 'interactive-tour-builder' ),
@@ -181,8 +196,9 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                 'intb_enable_cookie' => array(
                     'name'       => esc_html__( 'Enable Cookie Limit', 'interactive-tour-builder' ),
                     'field_type' => 'intbswitch',
-                    'default'    => 'yes',
-                    'desc'       => esc_html__( 'Enable this option to set a cookie limit for the tour. When enabled, the tour will only show once per user for a specified period (e.g., 30 days).', 'interactive-tour-builder' )
+                    'default'    => 'no',
+                    'desc'       => esc_html__( 'Enable this option to set a cookie limit for the tour. When enabled, the tour will only show once per user for a specified period (e.g., 30 days).', 'interactive-tour-builder' ),
+                    'data-show'  => 'intb_enable_cookie',
                 ),
                 'intb_display_limit' => array(
                     'name'       => esc_html__( 'Display Limit', 'interactive-tour-builder' ),
@@ -192,15 +208,33 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
                     'min'        => 1,
                     'max'        => 100,
                     'desc'       => esc_html__( 'Set the maximum number of steps to be displayed in the tour. The tour will stop once this limit is reached.', 'interactive-tour-builder' ),
+                    'class'      => 'intb_enable_cookie',
                 ),
+
+                'intb_display_type' => array(
+                    'name'       => esc_html__( 'Display Trigger Type', 'interactive-tour-builder' ),
+                    'field_type' => 'intbcheckbox',
+                    'default'    => array( 'after_second' ),
+                    'options'    => array(
+                        'after_second' => esc_html__( 'After Seconds', 'interactive-tour-builder' ),
+                        'scroll'       => esc_html__( 'On Scroll', 'interactive-tour-builder' ),
+                        'click'        => esc_html__( 'After Click to Element', 'interactive-tour-builder' ),
+                    ),
+                    'desc'              => esc_html__( 'Choose when this tour step should be displayed.', 'interactive-tour-builder' ),
+                    'disabled_options'  => array( 'scroll', 'click' ),
+                    'data_hide'  => '.display_type_option',
+                ),
+
                 'intb_display_after_second' => array(
-                    'name'       => esc_html__( 'Display after second', 'interactive-tour-builder' ),
-                    'field_type' => 'intbnumber',
-                    'default'    => 2,
-                    'step'       => 1,
-                    'min'        => 0,
-                    'max'        => 20,
-                    'desc'       =>  esc_html__( 'Set the number of seconds after which the tour step will be displayed. Adjust the time based on your desired delay before showing the next step.', 'interactive-tour-builder' ),
+                    'name'          => esc_html__( 'Display after second', 'interactive-tour-builder' ),
+                    'field_type'    => 'intbnumber',
+                    'default'       => '',
+                    'step'          => 1,
+                    'min'           => 0,
+                    'max'           => 20,
+                    'desc'          =>  esc_html__( 'Set the number of seconds after which the tour step will be displayed. Adjust the time based on your desired delay before showing the next step.', 'interactive-tour-builder' ),
+                    'style'         => 'intb_display_type.after_second',
+                    'extra_class'   => 'display_type_option after_second',
                 ),
                 'intb_display_scroll' => array(
                     'name'       => esc_html__( 'Display on Scroll from Top', 'interactive-tour-builder' ),
@@ -310,15 +344,27 @@ if ( ! class_exists( 'INTB_Tour_Builder_Meta_Box' ) ) :
             
 
             if ( isset( $_POST['intb_options'] ) && is_array( $_POST['intb_options'] ) ) :
+                $defaults = array(
+                    'intb_display_type' => array(),
+                );
+
+                $posted = wp_unslash( $_POST['intb_options'] );
                 $options_data = array_map( function( $value ) {
-                    return is_array( $value ) ? array_map( 'sanitize_text_field', wp_unslash( $value ) ) : sanitize_text_field( wp_unslash( $value ) );
-                }, wp_unslash( $_POST['intb_options'] ) );
+                    return is_array( $value )
+                        ? array_map( 'sanitize_text_field', $value )
+                        : sanitize_text_field( $value );
+                }, $posted );
+            
+                $options_data = array_merge( $defaults, $options_data );
 
                 foreach ( $this->fields as $key => $field ) :
-                    $options_data[ $key ] = isset( $options_data[ $key ] ) ? true : false;
+                    if ( isset( $field['field_type'] ) && $field['field_type'] === 'intbcheckbox' && ! is_array( $field['default'] ) ) :
+                        $options_data[ $key ] = isset( $options_data[ $key ] ) ? true : false;
+                    endif;
                 endforeach;
-
+            
                 update_post_meta( $post_id, 'intb_options', $options_data );
+            
             endif;
 
             if ( isset( $_POST['intb_role'] ) && is_array( $_POST['intb_role'] ) ) :

@@ -1,9 +1,9 @@
 <?php
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) :
     exit;
-}
+endif;
 
 if ( ! class_exists( 'INTB' ) ) :
 
@@ -84,9 +84,9 @@ if ( ! class_exists( 'INTB' ) ) :
             require_once INTB_PATH . 'include/intb-functions.php';
             require_once INTB_PATH . 'include/public/class-intb-script.php';
 
-            if ( is_admin() ) {
+            if ( is_admin() ) :
                 $this->includes_admin();
-            }
+            endif;
         }
 
         /**
@@ -95,6 +95,7 @@ if ( ! class_exists( 'INTB' ) ) :
          * @access private
          */
         private function includes_admin() {
+            require_once INTB_PATH . 'include/class-intb-install.php'; 
             require_once INTB_PATH . 'include/admin/class-intb-manage.php';
             require_once INTB_PATH . 'include/admin/class-intb-metadata.php';
             require_once INTB_PATH . 'include/admin/class-intb-page.php';

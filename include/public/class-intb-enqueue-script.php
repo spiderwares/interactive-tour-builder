@@ -34,8 +34,8 @@ if ( ! class_exists( 'INTB_Enqueue_Script' ) ) :
                     $selcted_pages      = get_post_meta( $post->ID, '_intb_selected_pages', true );
                     $saved_single_pages = get_post_meta( $post->ID, '_intb_selected_single_page', true );
                     $selcted_terms      = get_post_meta( $post->ID, '_intb_selected_taxonomies', true );
+                    $js_file_path       = INTB_URL. 'assets/js/intb-tour-' . $post->ID . '.js';    
 
-                    $js_file_path = INTB_URL. 'assets/js/intb-tour-' . $post->ID . '.js';                    
                     if ( !empty( $selcted_pages ) && is_page( $selcted_pages ) ) :
                         wp_enqueue_script( 'intb_tour_js_' . $post->ID, $js_file_path, array( 'jquery' ), time(), true );
                     endif;

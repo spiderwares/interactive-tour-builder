@@ -22,7 +22,7 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
         
         public function enqueue_driver_js() {
             wp_enqueue_script( 'driver-script', INTB_URL . 'assets/js/driver.js', array(), INTB_VERSION, false );
-            wp_enqueue_script('wp-hooks', includes_url('js/hooks.js'), array('jquery'), INTB_VERSION, true);
+            wp_enqueue_script( 'wp-hooks', includes_url('js/hooks.js'), array('jquery'), INTB_VERSION, true);
             wp_enqueue_script( 'intb-tour-helper', INTB_URL . 'assets/js/intb-tour-helper.js', array( 'jquery', 'wp-hooks' ), INTB_VERSION, true );
             wp_enqueue_style( 'driver-style', INTB_URL . 'assets/css/driver.css', array(), INTB_VERSION, false );
             wp_enqueue_style( 'intb-frontend', INTB_URL . 'assets/css/intb-frontend.css', array(), INTB_VERSION, false );
@@ -50,6 +50,11 @@ if ( ! class_exists( 'Intb_Shortcode' ) ) :
 
                 if ( $allowed ) :
                     $options_data       = get_post_meta( $tour->ID, 'intb_options', true );
+                    
+                    if ( ! isset( $options_data['intb_display_type'] ) ) :
+                        $options_data['intb_display_type'] = array( 'after_second', 'scroll', 'click' );
+                    endif;
+                    
                     $meta_data          = get_post_meta( $tour->ID, '_intb_tour_meta_fields', true );
                     $selcted_pages      = get_post_meta( $tour->ID, '_intb_selected_pages', true );
                     $saved_single_pages = get_post_meta( $tour->ID, '_intb_selected_single_page', true );
