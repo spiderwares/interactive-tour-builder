@@ -91,7 +91,6 @@ jQuery(function ($) {
                     $.intbTourHelper.startTour(driverObj, tourId, displayLimit);
                 };
                 
-                console.log(tour.options.intb_display_type);
                 var displayTypes = tour.options.intb_display_type;
 
                 // If the display type is set to 'click' and wp.hooks is available, trigger the tour when the target element is clicked.

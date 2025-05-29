@@ -3,7 +3,7 @@
 **Contributors:** jthemesstudio, spiderwares  
 **Tags:** interactive tour, guided tour, driver.js, user experience, product tour
 **Tested up to:** 6.8 
-**Stable tag:** 1.0.9
+**Stable tag:** 1.0.10
 **License:** GPL-2.0+  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.txt  
 
@@ -90,6 +90,9 @@ A: Yes, the plugin is fully responsive and optimized for all devices, including 
 
 
 ## Changelog
+
+### 1.0.10
+- Removed Font Awesome to reduce dependency and improve performance
 
 ### 1.0.9
 - Introduced a new premium tour style

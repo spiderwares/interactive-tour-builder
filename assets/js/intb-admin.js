@@ -149,7 +149,6 @@ jQuery(function($) {
                     $(document.body).find(target).show();
             } else if (_this.is(':checkbox') && _this.closest('.intb-checkbox-group').length ) {
                 var target = _this.val();
-                console.log(target);
                 if (_this.is(':checked')) {
                     $('.'+target).show();
                 } else {
@@ -157,7 +156,6 @@ jQuery(function($) {
                 }
             } else {
                 var target = _this.data('show');
-                console.log(target);
                 $(document.body).find(target).toggle();
             }
         }

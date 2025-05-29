@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Interactive Tour Builder
  * Description:       Create immersive and interactive tours for your website with the Interactive Tour Builder plugin. Engage your audience by showcasing key features, areas, or products through step-by-step virtual tours, pop-up tooltips, and guided highlights.
- * Version:           1.0.9
+ * Version:           1.0.10
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            Jthemes Studio
@@ -23,7 +23,7 @@ if ( ! defined( 'INTB_BASENAME' ) ) :
 endif;
 
 if ( ! defined( 'INTB_VERSION' ) ) :
-    define( 'INTB_VERSION', '1.0.9' ); // Define the plugin version.
+    define( 'INTB_VERSION', '1.0.10' ); // Define the plugin version.
 endif;
 
 if ( ! defined( 'INTB_PATH' ) ) :
